@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    mode: HTML
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/quratz?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: yinxin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
