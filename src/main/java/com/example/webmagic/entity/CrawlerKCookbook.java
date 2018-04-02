@@ -13,7 +13,7 @@ import java.io.Serializable;
  **/
 @SuppressWarnings("serial")
 @Entity
-@Table
+@Table(name="crawler_k_cookbook")
 public class CrawlerKCookbook implements Serializable {
 
 	/**唯一主键**/
