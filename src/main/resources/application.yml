@@ -1,6 +1,7 @@
 spring:
   thymeleaf:
     mode: HTML
+    cache: false
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver

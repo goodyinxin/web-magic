@@ -37,7 +37,7 @@ public class IndexController {
     public static final Logger log = LoggerFactory.getLogger(IndexController.class);
 
     @Autowired
-    @Qualifier("Scheduler")
+    @Qualifier("scheduler")
     private Scheduler scheduler;
 
     @Qualifier("quartzScheduler")
