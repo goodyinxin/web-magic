@@ -35,16 +35,16 @@ public class MeiShiChinaService {
     }
 
 
-    private static Integer page = 93;
+    private static Integer page = 97;
     public void getUrl(){
         log.info("开始爬取第------"+page+"页");
         List<String> urls = MeiShiChinaPerser.getUrls();
         for (String url : urls) {
             if (page > 1) {
                 if (url.contains("html")) {
-                    url ="http:"+ url.replace(".html", "") + "-page-" + page + ".html";
+                    url = url.replace(".html", "") + "-page-" + page + ".html";
                 } else {
-                    url ="http:"+ url + "page/" + page + "/";
+                    url = url + "page/" + page + "/";
                 }
             }
             try{
@@ -72,6 +72,7 @@ public class MeiShiChinaService {
 
                     try {
                         CrawlerKCookbook save = crawlerKCookbookRepository.save(crawlerKCookbook);
+                        log.info("数据保存成功");
                         String kcbimg = crawlerKCookbook.getKCBIMG();
                         String filePath = "E:\\食谱图片\\美食天下\\" + crawlerKCookbook.getKCBNAME() + "\\";
                         DownloadPic.download(kcbimg, crawlerKCookbook.getKCBNAME(), filePath);
@@ -80,7 +81,7 @@ public class MeiShiChinaService {
                         log.error("出现异常--------保存失败");
                     }
 
-                        log.info("数据保存成功");
+
 
                 } else {
                     log.info("数据重复");

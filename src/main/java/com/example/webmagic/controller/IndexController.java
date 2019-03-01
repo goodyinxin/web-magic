@@ -3,6 +3,7 @@ package com.example.webmagic.controller;
 import com.example.webmagic.bean.JobBean;
 import com.example.webmagic.bean.Msg;
 import com.example.webmagic.bean.SchedulerManager;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
@@ -56,6 +57,7 @@ public class IndexController {
      * @param request
      * @return
      */
+    @ApiOperation(value="获取task列表", notes="")
     @GetMapping("/taskList")
     @ResponseBody
     public Msg scheduleList(HttpServletRequest request) {
@@ -96,6 +98,7 @@ public class IndexController {
 
 
     /*添加定时任务*/
+    @ApiOperation(value="添加task任务", notes="根据JobBean来添加任务")
     @PostMapping("/addJob")
     public String addJob(JobBean jobBean, HttpServletRequest request) {
         // 加载定时任务配置文件

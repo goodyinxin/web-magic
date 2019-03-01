@@ -18,7 +18,7 @@ public class CrawlerKCookbook implements Serializable {
 
 	/**唯一主键**/
 	@Id
-	@GeneratedValue
+	//@GeneratedValue
 	 private Integer KCBID;
 
 	/**菜谱唯一标识**/
